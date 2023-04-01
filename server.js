@@ -9,9 +9,9 @@ const multer  = require("multer");
 const https = require('https');
 const http = require('http');
 //const PNG = require('pngjs').PNG;
-const extract = require('png-chunks-extract');
-const encode = require('png-chunks-encode');
-const PNGtext = require('png-chunk-text');
+const extract = require('png-chunks-extract');
+const encode = require('png-chunks-encode');
+const PNGtext = require('png-chunk-text');
 const ExifReader = require('exifreader');
 
 const sharp = require('sharp');
@@ -75,9 +75,11 @@ var api_key_openai;
 var is_colab = true;
 var charactersPath = 'public/characters/';
 var chatsPath = 'public/chats/';
+var UserAvatarsPath = 'public/User Avatars/';
 if (is_colab && process.env.googledrive == 2){
     charactersPath = '/content/drive/MyDrive/TavernAI/characters/';
     chatsPath = '/content/drive/MyDrive/TavernAI/chats/';
+    UserAvatarsPath = '/content/drive/MyDrive/TavernAI/User Avatars/';
 }
 const jsonParser = express.json({limit: '100mb'});
 const urlencodedParser = express.urlencoded({extended: true, limit: '100mb'});
@@ -815,7 +817,7 @@ app.post("/iscolab", jsonParser, function(request, response){
     
 });
 app.post("/getuseravatars", jsonParser, function(request, response){
-    var images = getImages("public/User Avatars");
+    var images = getImages(UserAvatarsPath);
     response.send(JSON.stringify(images));
     
 });
