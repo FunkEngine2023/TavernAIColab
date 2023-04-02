@@ -197,7 +197,7 @@ app.get("/notes/*", function(request, response){
 app.post("/getlastversion", jsonParser, function(request, response_getlastversion = response){
     if(!request.body) return response_getlastversion.sendStatus(400);
     
-    const repo = 'TavernAI/TavernAI';
+    const repo = 'TavernAI/TavernAIColab';
     let req;
     req = https.request({
         hostname: 'github.com',
