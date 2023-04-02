@@ -608,7 +608,7 @@ $(document).ready(function(){
         return mes;
     }
     function getMessageAvatar(mes) {
-        var avatarImg = "User Avatars/"+user_avatar;
+        var avatarImg = '/content/drive/MyDrive/TavernAI/UserAvatars/'+user_avatar;
         if(!mes.is_user){
             if(this_chid === undefined) {
                 avatarImg = "img/chloe.png";
@@ -1379,7 +1379,7 @@ $(document).ready(function(){
             if(this_chid == undefined){
                 //send ch sel
                 popup_type = 'char_not_selected';
-                callPopup('<h3>Сharacter is not selected</h3>');
+                callPopup('<h3>Character is not selected</h3>');
             }
             is_send_press = false;
         }
@@ -1761,7 +1761,7 @@ $(document).ready(function(){
         user_avatar = $(this).attr("imgfile");
         $('.mes').each(function(){
             if($(this).attr('ch_name') == name1){
-                $(this).children('.avatar').children('img').attr('src', 'User Avatars/'+user_avatar);
+                $(this).children('.avatar').children('img').attr('src', '/content/drive/MyDrive/TavernAI/UserAvatars/'+user_avatar);
             }
         });
         saveSettings();
