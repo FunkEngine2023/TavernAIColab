@@ -197,7 +197,7 @@ app.get("/notes/*", function(request, response){
 app.post("/getlastversion", jsonParser, function(request, response_getlastversion = response){
     if(!request.body) return response_getlastversion.sendStatus(400);
     
-    const repo = 'TavernAI/TavernAIColab';
+    const repo = 'TavernAI/TavernAI';
     let req;
     req = https.request({
         hostname: 'github.com',
@@ -802,9 +802,9 @@ app.post("/getcharacters", jsonParser, async function(request, response) {
 });
 app.post("/getbackgrounds", jsonParser, function(request, response){
     var images = getImages("public/backgrounds");
-    // if(is_colab === true){
-        // images = ['tavern.png'];        --FunkEngine2023
-    // }
+    if(is_colab === true){
+        images = ['tavern.png'];
+    }
     response.send(JSON.stringify(images));
     
 });
