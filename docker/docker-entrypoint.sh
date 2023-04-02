@@ -24,5 +24,11 @@ if [ ! -s "/home/node/app/config/settings.json" ]; then
   mv /home/node/app/public/settings.json.default /home/node/app/config/settings.json
 fi
 
+# Check if the "config.conf" file is not empty
+if [ ! -s "/home/node/app/config.conf" ]; then
+  echo "config.conf file does not exist. Copying default config."
+  mv /home/node/app/config.conf.default /home/node/app/config.conf
+fi
+
 # Start the server
 node /home/node/app/server.js
