@@ -5,13 +5,13 @@ const readline = require('readline');
 const open = require('open');
 
 var rimraf = require("rimraf");
-const multer  = require("multer");
+const multer = require("multer");
 const https = require('https');
 const http = require('http');
 //const PNG = require('pngjs').PNG;
-const extract = require('png-chunks-extract');
-const encode = require('png-chunks-encode');
-const PNGtext = require('png-chunk-text');
+const extract = require('png-chunks-extract');
+const encode = require('png-chunks-encode');
+const PNGtext = require('png-chunk-text');
 const ExifReader = require('exifreader');
 
 const sharp = require('sharp');
@@ -802,9 +802,9 @@ app.post("/getcharacters", jsonParser, async function(request, response) {
 });
 app.post("/getbackgrounds", jsonParser, function(request, response){
     var images = getImages("public/backgrounds");
-    if(is_colab === true){
-        images = ['tavern.png'];
-    }
+    // if(is_colab === true){
+        // images = ['tavern.png'];
+    // }
     response.send(JSON.stringify(images));
     
 });
