@@ -523,22 +523,18 @@ $(document).ready(function(){
             body: JSON.stringify({
                         "": ""
                     })
-
         });
         if (response.ok === true) {
             const getData = await response.json();
             if(getData.colaburl != false){
                 $('#colab_shadow_popup').css('display', 'none');
                 is_colab = true;
-                let url = String(getData.colaburl).split("flare.com")[0] + "flare.com";
-                url = String(url).split("loca.lt")[0] + "loca.lt";
+                url = String(process.env.colaburl).trim();
                 $('#api_url_text').val(url);
                 setTimeout(function() {
                     $('#api_button').click();
                 }, 2000);
             }
-
-
         }
     }
     async function setBackground(bg) {

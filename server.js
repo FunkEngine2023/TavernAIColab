@@ -79,7 +79,7 @@ var UserAvatarsPath = 'public/User Avatars/';
 if (is_colab && process.env.googledrive == 2){
     charactersPath = '/content/drive/MyDrive/TavernAI/characters/';
     chatsPath = '/content/drive/MyDrive/TavernAI/chats/';
-    UserAvatarsPath = '/content/drive/MyDrive/TavernAI/User Avatars/';
+    UserAvatarsPath = '/content/drive/MyDrive/TavernAI/UserAvatars/';
 }
 const jsonParser = express.json({limit: '100mb'});
 const urlencodedParser = express.urlencoded({extended: true, limit: '100mb'});
